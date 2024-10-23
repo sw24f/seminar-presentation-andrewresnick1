@@ -1,6 +1,6 @@
 ---
-title: "Creating Presentations with Quarto"
-subtitle: "Introduction to Data Science | Fall 2024"
+title: "To Explain or to Predict?"
+subtitle: "Discussion of research paper by Galit Shmueli"
 format:
     revealjs:
         slide-number: true
@@ -8,15 +8,17 @@ format:
         theme: default
 ---
 
-## About Revealjs
+## About Galit Shmueli
 
-- A format used by Quarto to create presentations
-- Renders slides as an HTML file by default
-- Highly recommended over alternatives, such as `beamer` or `pptx`, due to its capabilities
+- 46 y/o, Dr. Galit Shmueli is a Chair Professor at the National Tsing Hua University in Taiwan.
+- Authored many influential works in predictive analytics, data mining, and business analytics.
+- "To Explain or to Predict?" is Shmueli's most cited work, 3,679 times.
 
-# Creating Slides
+# Discussion of the paper
 
-## Title Slide Configuration
+# Reasoning behind "To Predict or to Explain"
+
+## 
 
 All specifications for a title slide are included in the Quarto document's YAML code.
 
