@@ -14,11 +14,16 @@ format:
 - Authored many influential works in predictive analytics, data mining, and business analytics.
 - "To Explain or to Predict?" is Shmueli's most cited work, 3,679 times.
 
-# Discussion of the paper
+## Purpose of To Explain or to Predict
+
+- Tackling the distinction between explanatory and predictive modelling in Statistics.
+- Lack of this distinction creates multiple problems within different disciplines.
+  - Gap between academia and practice
+
 
 # Reasoning behind "To Predict or to Explain"
 
-## 
+## Lack of 
 
 All specifications for a title slide are included in the Quarto document's YAML code.
 
