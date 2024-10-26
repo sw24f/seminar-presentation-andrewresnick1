@@ -7,6 +7,7 @@ format:
         preview-links: true
         theme: default
 ---
+# Introduction
 
 ## About Galit Shmueli
 
@@ -19,12 +20,28 @@ format:
 - Tackling the distinction between explanatory and predictive modelling in Statistics.
 - Lack of this distinction creates multiple problems within different disciplines.
   - Gap between academia and practice
+  - Finance, psychology, philosophy
 
+# Background
 
-# Reasoning behind "To Predict or to Explain"
+## Explanatory Modeling
+- Explaining: Causal explanation
+- Explanatory modeling: Use of statistical models for testing causal explanations
+- In practice: association-based models are applied to observational data
+  - Most common: Regression model
+  - Justification: Theory itself provides the causality 
 
-## Lack of 
+## Predictive Modeling
+- Predictive Modeling: the process of applying a statistical model or data mining algorithm to data for the purpose of predicting new or future observations.
+- Shmueli focuses on "nonstochastic prediction" - the goal being to predict output value for new observations given their input values.
 
+## Descriptive Modeling
+- Descriptive Modeling: aimed at summarizing or representing the data structure in a compact manner
+- Absent or less incorporated causal theory
+- Regression:
+  - Can be descriptive if used for capturing the association between dependent and independent variables
+  - Not descriptive if purpose is causal inference or prediction
+  
 All specifications for a title slide are included in the Quarto document's YAML code.
 
 A simple example:
