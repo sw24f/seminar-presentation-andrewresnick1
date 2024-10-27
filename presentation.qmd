@@ -5,6 +5,7 @@ format:
     revealjs:
         slide-number: true
         preview-links: true
+        smaller: true
         theme: default
 ---
 # Introduction
@@ -108,11 +109,19 @@ format:
   - Goal is to understand causal relationships by using variables represented in the theoretical constructs
   - Variables may be chosen based on the role of the variables based on different fields.
   - Hard to avoid bias, solutions include 2SLS.
-  - 
+  - May only include "control" variables that take place before the causal variable
+  - Must include main effects if interaction terms of those effects
 - Predictive:
-  - 
+  - Predictors must be available at time of prediction
+  - Quality of association, data quality, 
 ## Choice of Methods
-
+- Explanatory:
+  - Requires interpretable statistical models, f, therefore regression is popular.
+  - Not suited for algorithmic models such as KNN or neural networks.
+- Predictive:
+  - f is often unknown, so can include statistical models and data mining algorithms. 
+  - Algorithmic models are very suitable for predictive and descriptive modeling.
+  - Shrinkage & Ensemble methods from Bias-Variance.
 ## Validation, Evaluation, Selection
 
 ## Model Use and Reporting
