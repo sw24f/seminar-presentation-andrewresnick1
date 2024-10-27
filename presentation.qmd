@@ -104,6 +104,7 @@ format:
   - Capturing potentially unknown relationships.
   - Explore a large number of numerical summaries seeking unknown relationships.
   - Reduction in the number of variables reduces sampling variance.
+
 ## Choice of Variables
 - Explanatory:
   - Goal is to understand causal relationships by using variables represented in the theoretical constructs
@@ -114,6 +115,7 @@ format:
 - Predictive:
   - Predictors must be available at time of prediction
   - Quality of association, data quality, 
+
 ## Choice of Methods
 - Explanatory:
   - Requires interpretable statistical models, f, therefore regression is popular.
@@ -122,8 +124,16 @@ format:
   - f is often unknown, so can include statistical models and data mining algorithms. 
   - Algorithmic models are very suitable for predictive and descriptive modeling.
   - Shrinkage & Ensemble methods from Bias-Variance.
-## Validation, Evaluation, Selection
 
+## Validation, Evaluation, Selection
+- Explanatory:
+  - Model validation & model fit
+  - Explanatory power, strength of relationship.
+  - Selected from highest explanatory power
+- Predictive:
+  - Generalization, ability of fitted model to predict new data.
+  - Predictive power, performance of fitted model on new data.
+  - Variety of methods for predictive accuracy, AIC, BIC
 ## Model Use and Reporting
 
 
