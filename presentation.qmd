@@ -41,7 +41,33 @@ format:
 - Regression:
   - Can be descriptive if used for capturing the association between dependent and independent variables
   - Not descriptive if purpose is causal inference or prediction
-  
+
+# Why they are different
+
+## Cause
+- Theory:
+  - Suppose a theory that construct X causes construct Y via function F
+  - Statistical model, f, defined as E(Y) = f(X)
+- Explanatory modeling attempts to match f and F as closely as possible
+- Predictive modeling attempts to utilize X, Y, and model f to generate good predictions of Y
+
+## Effect - Causation Association
+- Causation-Association:
+  - Explanatory: Model f represents an underlying causal function, X is assumed to cause Y.
+  - Predictive: Model f captures assocation between X and Y.
+## Effect - Theory-Data
+- Theory-Data:
+  - Explanatory: Model f is constructed based on F in a way that supports the interpretation of the relationship between X, Y, and testing the causal hypotheses.
+  - Predictive: Model f is constructed from the data. Interpretability of the relationship between X & Y are not required, sometimes desired for transparency.
+## Effect - Retrospective-Prospective:
+- Retrospective-Prospective:
+  - Explanatory: Retrospective, model f is used to test an existing set of hypotheses.
+  - Predictive: Prospective, model f is constructed for new observations.
+## Effect - Bias-Variance:
+  - Explanatory: Focus is on minimizing bias to obtain the most accurate representation of the theory.
+  - Predictive: 
+    - Focus is on minimizing bias and estimation variance. May occasionally sacrifice accuracy for empirical precision. 
+    - "Wrong" model may predict better than the "correct" one.
 All specifications for a title slide are included in the Quarto document's YAML code.
 
 A simple example:
