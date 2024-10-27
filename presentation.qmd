@@ -96,9 +96,21 @@ format:
     - Estimate multiple reduced models, creating different models for different observations.
     
 ## Exploratory Data Analysis
-
+- Explanatory:
+  - EDA is geared toward specified causal relationships.
+  - Search for numerical summaries of the theoretical relationships.
+- Predictive:
+  - Capturing potentially unknown relationships.
+  - Explore a large number of numerical summaries seeking unknown relationships.
+  - Reduction in the number of variables reduces sampling variance.
 ## Choice of Variables
-
+- Explanatory:
+  - Goal is to understand causal relationships by using variables represented in the theoretical constructs
+  - Variables may be chosen based on the role of the variables based on different fields.
+  - Hard to avoid bias, solutions include 2SLS.
+  - 
+- Predictive:
+  - 
 ## Choice of Methods
 
 ## Validation, Evaluation, Selection

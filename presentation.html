@@ -391,34 +391,193 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">To Explain or to Predict?</h1>
-  <p class="subtitle">Undergraduate Seminar | Fall 2024</p>
+  <p class="subtitle">Discussion of research paper by Galit Shmueli</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="about-revealjs" class="slide level2">
-<h2>About Revealjs</h2>
-<ul>
-<li>A format used by Quarto to create presentations</li>
-<li>Renders slides as an HTML file by default</li>
-<li>Highly recommended over alternatives, such as <code>beamer</code> or <code>pptx</code>, due to its capabilities</li>
-</ul>
-</section>
 <section>
-<section id="creating-slides" class="title-slide slide level1 center">
-<h1>Creating Slides</h1>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
 
 </section>
-<section id="title-slide-configuration" class="slide level2">
-<h2>Title Slide Configuration</h2>
-<p>All specifications for a title slide are included in the Quarto document’s YAML code.</p>
-<p>A simple example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Creating Presentations with Quarto"</span></span>
-<span id="cb1-3"><a href=""></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Introduction to Data Science | Fall 2024"</span></span>
-<span id="cb1-4"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
-<span id="cb1-5"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="about-galit-shmueli" class="slide level2">
+<h2>About Galit Shmueli</h2>
+<ul>
+<li>46 y/o, Dr.&nbsp;Galit Shmueli is a Chair Professor at the National Tsing Hua University in Taiwan.</li>
+<li>Authored many influential works in predictive analytics, data mining, and business analytics.</li>
+<li>“To Explain or to Predict?” is Shmueli’s most cited work, 3,679 times.</li>
+</ul>
+</section>
+<section id="purpose-of-to-explain-or-to-predict" class="slide level2">
+<h2>Purpose of To Explain or to Predict</h2>
+<ul>
+<li>Tackling the distinction between explanatory and predictive modelling in Statistics.</li>
+<li>Lack of this distinction creates multiple problems within different disciplines.
+<ul>
+<li>Gap between academia and practice</li>
+<li>Finance, psychology, philosophy</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="background" class="title-slide slide level1 center">
+<h1>Background</h1>
+
+</section>
+<section id="explanatory-modeling" class="slide level2">
+<h2>Explanatory Modeling</h2>
+<ul>
+<li>Explaining: Causal explanation</li>
+<li>Explanatory modeling: Use of statistical models for testing causal explanations</li>
+<li>In practice: association-based models are applied to observational data
+<ul>
+<li>Most common: Regression model</li>
+<li>Justification: Theory itself provides the causality</li>
+</ul></li>
+</ul>
+</section>
+<section id="predictive-modeling" class="slide level2">
+<h2>Predictive Modeling</h2>
+<ul>
+<li>Predictive Modeling: the process of applying a statistical model or data mining algorithm to data for the purpose of predicting new or future observations.</li>
+<li>Shmueli focuses on “nonstochastic prediction” - the goal being to predict output value for new observations given their input values.</li>
+</ul>
+</section>
+<section id="descriptive-modeling" class="slide level2">
+<h2>Descriptive Modeling</h2>
+<ul>
+<li>Descriptive Modeling: aimed at summarizing or representing the data structure in a compact manner</li>
+<li>Absent or less incorporated causal theory</li>
+<li>Regression:
+<ul>
+<li>Can be descriptive if used for capturing the association between dependent and independent variables</li>
+<li>Not descriptive if purpose is causal inference or prediction</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="why-they-are-different" class="title-slide slide level1 center">
+<h1>Why they are different</h1>
+
+</section>
+<section id="cause" class="slide level2">
+<h2>Cause</h2>
+<ul>
+<li>Theory:
+<ul>
+<li>Suppose a theory that construct X causes construct Y via function F</li>
+<li>Statistical model, f, defined as E(Y) = f(X)</li>
+</ul></li>
+<li>Explanatory modeling attempts to match f and F as closely as possible</li>
+<li>Predictive modeling attempts to utilize X, Y, and model f to generate good predictions of Y</li>
+</ul>
+</section>
+<section id="effect---causation-association" class="slide level2">
+<h2>Effect - Causation Association</h2>
+<ul>
+<li>Causation-Association:
+<ul>
+<li>Explanatory: Model f represents an underlying causal function, X is assumed to cause Y.</li>
+<li>Predictive: Model f captures assocation between X and Y. ## Effect - Theory-Data</li>
+</ul></li>
+<li>Theory-Data:
+<ul>
+<li>Explanatory: Model f is constructed based on F in a way that supports the interpretation of the relationship between X, Y, and testing the causal hypotheses.</li>
+<li>Predictive: Model f is constructed from the data. Interpretability of the relationship between X &amp; Y are not required, sometimes desired for transparency. ## Effect - Retrospective-Prospective:</li>
+</ul></li>
+<li>Retrospective-Prospective:
+<ul>
+<li>Explanatory: Retrospective, model f is used to test an existing set of hypotheses.</li>
+<li>Predictive: Prospective, model f is constructed for new observations. ## Effect - Bias-Variance:</li>
+<li>Explanatory: Focus is on minimizing bias to obtain the most accurate representation of the theory.</li>
+<li>Predictive:
+<ul>
+<li>Focus is on minimizing bias and estimation variance. May occasionally sacrifice accuracy for empirical precision.</li>
+<li>“Wrong” model may predict better than the “correct” one.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="statistical-modeling-differences" class="title-slide slide level1 center">
+<h1>Statistical Modeling Differences</h1>
+
+</section>
+<section id="study-design-and-data-collection" class="slide level2">
+<h2>Study Design and Data Collection</h2>
+<ul>
+<li>Explanatory:
+<ul>
+<li>Smaller n, just enough to reduce bias</li>
+<li>Increase in number of groups in hierarchial data</li>
+<li>Clean, experimental data</li>
+<li>Valid, reliable data collection tool, accurately reflecting studied concepts</li>
+<li>Factorial designs</li>
+</ul></li>
+<li>Prediction:
+<ul>
+<li>Larger n</li>
+<li>Increase in size of group in hierarchial data</li>
+<li>Observational data, avoiding “overly clean”</li>
+<li>Measurement quality &amp; meaning to the predicting variable</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-preparation" class="slide level2">
+<h2>Data Preparation</h2>
+<ul>
+<li>Explanatory:
+<ul>
+<li>Partitioning is less common, i.e.&nbsp;test sets, because of the reduction in statistical power.
+<ul>
+<li>When used, can be useful for model validity.</li>
+</ul></li>
+</ul></li>
+<li>Predictive:
+<ul>
+<li>Data partitioning has become a standard preprocessing step.</li>
+<li>Missing values:
+<ul>
+<li>Depends on the relationship between the missingness and dependent variable.
+<ul>
+<li>In cases of financial fraud, missingness can be a blessing in disguise.</li>
+</ul></li>
+<li>Estimate multiple reduced models, creating different models for different observations.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="exploratory-data-analysis" class="slide level2">
+<h2>Exploratory Data Analysis</h2>
+<ul>
+<li>Explanatory:
+<ul>
+<li>EDA is geared toward specified causal relationships.</li>
+<li>Search for numerical summaries of the theoretical relationships.</li>
+</ul></li>
+<li>Predictive:
+<ul>
+<li>Capturing potentially unknown relationships.</li>
+<li>Explore a large number of numerical summaries seeking unknown relationships.</li>
+<li>Reduction in the number of variables reduces sampling variance. ## Choice of Variables</li>
+</ul></li>
+<li>Explanatory:
+<ul>
+<li>Goal is to understand causal relationships by using variables represented in the theoretical constructs</li>
+<li>Variables may be chosen based on the role of the variables based on different fields.</li>
+<li>Hard to avoid bias, solutions include 2SLS.</li>
+</ul></li>
+<li><h2 id="predictive">Predictive:</h2>
+<h2 id="choice-of-methods">Choice of Methods</h2></li>
+</ul>
+</section>
+<section id="validation-evaluation-selection" class="slide level2">
+<h2>Validation, Evaluation, Selection</h2>
+</section>
+<section id="model-use-and-reporting" class="slide level2">
+<h2>Model Use and Reporting</h2>
 <p>Specifications for <em>date</em> and <em>author</em> can also be added.</p>
 </section>
 <section id="revealjs-options" class="slide level2">
@@ -434,15 +593,15 @@
 </section>
 <section id="yaml-example" class="slide level2">
 <h2>YAML Example</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Creating Presentations with Quarto"</span></span>
-<span id="cb2-3"><a href=""></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Introduction to Data Science | Fall 2024"</span></span>
-<span id="cb2-4"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb2-5"><a href=""></a><span class="at">    </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb2-6"><a href=""></a><span class="at">        </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb2-7"><a href=""></a><span class="at">        </span><span class="fu">preview-links</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb2-8"><a href=""></a><span class="at">        </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb2-9"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Creating Presentations with Quarto"</span></span>
+<span id="cb1-3"><a href=""></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Introduction to Data Science | Fall 2024"</span></span>
+<span id="cb1-4"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href=""></a><span class="at">    </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href=""></a><span class="at">        </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-7"><a href=""></a><span class="at">        </span><span class="fu">preview-links</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-8"><a href=""></a><span class="at">        </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb1-9"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This is a verbatim copy of the YAML code used in the Quarto file for this presentation!</p>
 </section>
 <section id="subsequent-slides" class="slide level2">
@@ -455,24 +614,24 @@
 </section>
 <section id="slides-example" class="slide level2">
 <h2>Slides Example</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a><span class="co">---</span></span>
-<span id="cb3-2"><a href=""></a><span class="an">title:</span><span class="co"> "Example Presentation"</span></span>
-<span id="cb3-3"><a href=""></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb3-4"><a href=""></a><span class="an">author:</span><span class="co"> "NAME"</span></span>
-<span id="cb3-5"><a href=""></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb3-6"><a href=""></a><span class="co">---</span></span>
-<span id="cb3-7"><a href=""></a></span>
-<span id="cb3-8"><a href=""></a><span class="fu"># Section Title</span></span>
-<span id="cb3-9"><a href=""></a></span>
-<span id="cb3-10"><a href=""></a><span class="fu">## List A</span></span>
-<span id="cb3-11"><a href=""></a></span>
-<span id="cb3-12"><a href=""></a><span class="ss">- </span>Bullet Point 1A</span>
-<span id="cb3-13"><a href=""></a><span class="ss">- </span>Bullet Point 2A</span>
-<span id="cb3-14"><a href=""></a></span>
-<span id="cb3-15"><a href=""></a><span class="fu">## List B</span></span>
-<span id="cb3-16"><a href=""></a></span>
-<span id="cb3-17"><a href=""></a><span class="ss">- </span>Bullet Point 1B</span>
-<span id="cb3-18"><a href=""></a><span class="ss">- </span>Bullet Point 2B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href=""></a><span class="co">---</span></span>
+<span id="cb2-2"><a href=""></a><span class="an">title:</span><span class="co"> "Example Presentation"</span></span>
+<span id="cb2-3"><a href=""></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb2-4"><a href=""></a><span class="an">author:</span><span class="co"> "NAME"</span></span>
+<span id="cb2-5"><a href=""></a><span class="an">format:</span><span class="co"> revealjs</span></span>
+<span id="cb2-6"><a href=""></a><span class="co">---</span></span>
+<span id="cb2-7"><a href=""></a></span>
+<span id="cb2-8"><a href=""></a><span class="fu"># Section Title</span></span>
+<span id="cb2-9"><a href=""></a></span>
+<span id="cb2-10"><a href=""></a><span class="fu">## List A</span></span>
+<span id="cb2-11"><a href=""></a></span>
+<span id="cb2-12"><a href=""></a><span class="ss">- </span>Bullet Point 1A</span>
+<span id="cb2-13"><a href=""></a><span class="ss">- </span>Bullet Point 2A</span>
+<span id="cb2-14"><a href=""></a></span>
+<span id="cb2-15"><a href=""></a><span class="fu">## List B</span></span>
+<span id="cb2-16"><a href=""></a></span>
+<span id="cb2-17"><a href=""></a><span class="ss">- </span>Bullet Point 1B</span>
+<span id="cb2-18"><a href=""></a><span class="ss">- </span>Bullet Point 2B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="slide-content" class="title-slide slide level1 center">
@@ -490,25 +649,25 @@
 <section id="code-block-example" class="slide level2">
 <h2>Code Block Example</h2>
 <p>For example, the following code <em>in the Quarto document</em></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a><span class="in">``` python</span></span>
-<span id="cb4-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-3"><a href=""></a>np.arange(<span class="dv">10</span>)</span>
-<span id="cb4-4"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a><span class="in">``` python</span></span>
+<span id="cb3-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href=""></a>np.arange(<span class="dv">10</span>)</span>
+<span id="cb3-4"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>will yield the following output <em>in the rendered slide</em>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href=""></a>np.arange(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href=""></a>np.arange(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notice that this does not run the Python code; it simply displays the block of code in the slide.</p>
 </section>
 <section id="executable-code" class="slide level2">
 <h2>Executable Code</h2>
 <p>To display the output of a code block in a slide, enclose the programming language inside <code>{}</code>. For example, the following code <em>in the Quarto document</em></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>```{python}</span>
-<span id="cb6-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-3"><a href=""></a>np.arange(<span class="dv">10</span>)</span>
-<span id="cb6-4"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>```{python}</span>
+<span id="cb5-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-3"><a href=""></a>np.arange(<span class="dv">10</span>)</span>
+<span id="cb5-4"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>will yield the following output <em>in the rendered slide</em>.</p>
-<div id="3fa9e7bb" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div id="b9a79320" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</code></pre>
 </div>
 </div>
@@ -517,28 +676,28 @@
 <section id="images-from-code-output" class="slide level2">
 <h2>Images from Code Output</h2>
 <p>Executable code blocks can be used to display images in slides. Consider the following code example.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>```{python}</span>
-<span id="cb8-2"><a href=""></a><span class="co">#| fig-align: center</span></span>
-<span id="cb8-3"><a href=""></a><span class="co">#| fig-cap: "A line plot on a polar axis"</span></span>
-<span id="cb8-4"><a href=""></a></span>
-<span id="cb8-5"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb8-6"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-7"><a href=""></a></span>
-<span id="cb8-8"><a href=""></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb8-9"><a href=""></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb8-10"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(</span>
-<span id="cb8-11"><a href=""></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
-<span id="cb8-12"><a href=""></a>)</span>
-<span id="cb8-13"><a href=""></a>ax.plot(theta, r)</span>
-<span id="cb8-14"><a href=""></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb8-15"><a href=""></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb8-16"><a href=""></a>plt.show()</span>
-<span id="cb8-17"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>```{python}</span>
+<span id="cb7-2"><a href=""></a><span class="co">#| fig-align: center</span></span>
+<span id="cb7-3"><a href=""></a><span class="co">#| fig-cap: "A line plot on a polar axis"</span></span>
+<span id="cb7-4"><a href=""></a></span>
+<span id="cb7-5"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-6"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-7"><a href=""></a></span>
+<span id="cb7-8"><a href=""></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb7-9"><a href=""></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb7-10"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(</span>
+<span id="cb7-11"><a href=""></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
+<span id="cb7-12"><a href=""></a>)</span>
+<span id="cb7-13"><a href=""></a>ax.plot(theta, r)</span>
+<span id="cb7-14"><a href=""></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb7-15"><a href=""></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb7-16"><a href=""></a>plt.show()</span>
+<span id="cb7-17"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="images-from-code-output-example" class="slide level2">
 <h2>Images from Code Output – Example</h2>
 <p>The preceding code example will create the following image.</p>
-<div id="4e4215b0" class="cell" data-execution_count="2">
+<div id="ac0ac237" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -552,7 +711,7 @@
 <section id="images-from-files" class="slide level2">
 <h2>Images from Files</h2>
 <p>It is also possible to insert an image from a saved file.</p>
-<div id="36afa4f5" class="cell" data-execution_count="3">
+<div id="9fd93c2c" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -566,7 +725,7 @@
 <section id="images-from-files-markdown-syntax" class="slide level2">
 <h2>Images from Files – Markdown Syntax</h2>
 <p>To import a saved image for display in a slide, use the following markdown syntax as an example. This line of code may be used to display the image on the previous slide.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href=""></a><span class="al">![A line plot on a polar axis](polar_axis.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href=""></a><span class="al">![A line plot on a polar axis](polar_axis.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>The caption for the figure is enclosed inside <code>[]</code>.</li>
 <li>The file path for the saved image file is enclosed inside <code>()</code>.</li>
@@ -581,17 +740,17 @@
 <li>The URL is enclosed inside <code>()</code>.</li>
 </ul>
 <p>For example, use the following markdown syntax to obtain a link to the Quarto website.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href=""></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href=""></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><a href="https://quarto.org">Quarto</a></p>
 </section>
 <section id="tables-markdown-syntax" class="slide level2">
 <h2>Tables – Markdown Syntax</h2>
 <p>Refer to the <a href="https://quarto.org/docs/authoring/tables.html">Quarto documentation</a> for a comprehensive explanation on the details of creating tables in markdown.</p>
 <p>The basic syntax for a simple table is illustrated by the following example.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href=""></a>| Left | Center | Right |</span>
-<span id="cb11-2"><a href=""></a>|:-----|:------:|------:|</span>
-<span id="cb11-3"><a href=""></a>| ABC  | ABC    | ABC   |</span>
-<span id="cb11-4"><a href=""></a>| ABCD | ABCD   | ABCD  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href=""></a>| Left | Center | Right |</span>
+<span id="cb10-2"><a href=""></a>|:-----|:------:|------:|</span>
+<span id="cb10-3"><a href=""></a>| ABC  | ABC    | ABC   |</span>
+<span id="cb10-4"><a href=""></a>| ABCD | ABCD   | ABCD  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -624,9 +783,9 @@
 </section>
 <section id="latex-example" class="slide level2">
 <h2>LaTeX Example</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href=""></a>$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</span>
-<span id="cb12-2"><a href=""></a>The quadratic formula is given by the above equation.</span>
-<span id="cb12-3"><a href=""></a>This is used to find the solutions to the equation $ax^2 + bx + c = 0$.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href=""></a>$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</span>
+<span id="cb11-2"><a href=""></a>The quadratic formula is given by the above equation.</span>
+<span id="cb11-3"><a href=""></a>This is used to find the solutions to the equation $ax^2 + bx + c = 0$.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><span class="math display">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span> The quadratic formula is given by the above equation. This is used to find the solutions to the equation <span class="math inline">\(ax^2 + bx + c = 0\)</span>.</p>
 </section></section>
 <section>
@@ -648,26 +807,26 @@
 <section id="incremental-lists-entire-presentation" class="slide level2">
 <h2>Incremental Lists – Entire Presentation</h2>
 <p>By including the following under the <code>revealjs</code> options in the YAML block, bulleted and numbered lists will display incrementally by default.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb13-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Presentation Title"</span></span>
-<span id="cb13-3"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb13-4"><a href=""></a><span class="at">    </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb13-5"><a href=""></a><span class="at">        </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb13-6"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Presentation Title"</span></span>
+<span id="cb12-3"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb12-4"><a href=""></a><span class="at">    </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb12-5"><a href=""></a><span class="at">        </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb12-6"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="incremental-lists-specific-slides" class="slide level2">
 <h2>Incremental Lists – Specific Slides</h2>
 <p>By enclosing a list’s code in a div, the display of the list can go against the default setting.</p>
 <p>To make a list incremental:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a>::: {.incremental}</span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href=""></a>::: {.incremental}</span>
+<span id="cb13-2"><a href=""></a><span class="ss">- </span>Item 1</span>
+<span id="cb13-3"><a href=""></a><span class="ss">- </span>Item 2</span>
+<span id="cb13-4"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To make a list non-incremental:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a>::: {.nonincremental}</span>
 <span id="cb14-2"><a href=""></a><span class="ss">- </span>Item 1</span>
 <span id="cb14-3"><a href=""></a><span class="ss">- </span>Item 2</span>
 <span id="cb14-4"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To make a list non-incremental:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a>::: {.nonincremental}</span>
-<span id="cb15-2"><a href=""></a><span class="ss">- </span>Item 1</span>
-<span id="cb15-3"><a href=""></a><span class="ss">- </span>Item 2</span>
-<span id="cb15-4"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="div-containers" class="slide level2">
 <h2>Div Containers</h2>
@@ -688,17 +847,17 @@
 <section id="multiple-columns" class="slide level2">
 <h2>Multiple Columns</h2>
 <p>This framework, which makes use of nested divs, enables the display of multiple columns in a slide.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a>:::: {.columns}</span>
-<span id="cb16-2"><a href=""></a></span>
-<span id="cb16-3"><a href=""></a>::: {.column width="50%"}</span>
-<span id="cb16-4"><a href=""></a>Left Column</span>
-<span id="cb16-5"><a href=""></a>:::</span>
-<span id="cb16-6"><a href=""></a></span>
-<span id="cb16-7"><a href=""></a>::: {.column width="50%"}</span>
-<span id="cb16-8"><a href=""></a>Right Column</span>
-<span id="cb16-9"><a href=""></a>:::</span>
-<span id="cb16-10"><a href=""></a></span>
-<span id="cb16-11"><a href=""></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a>:::: {.columns}</span>
+<span id="cb15-2"><a href=""></a></span>
+<span id="cb15-3"><a href=""></a>::: {.column width="50%"}</span>
+<span id="cb15-4"><a href=""></a>Left Column</span>
+<span id="cb15-5"><a href=""></a>:::</span>
+<span id="cb15-6"><a href=""></a></span>
+<span id="cb15-7"><a href=""></a>::: {.column width="50%"}</span>
+<span id="cb15-8"><a href=""></a>Right Column</span>
+<span id="cb15-9"><a href=""></a>:::</span>
+<span id="cb15-10"><a href=""></a></span>
+<span id="cb15-11"><a href=""></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="avoiding-content-overflow-introducing-a-scroll-bar" class="slide level2 scrollable">
 <h2>Avoiding Content Overflow: Introducing a Scroll Bar</h2>
@@ -709,7 +868,7 @@
 <li>If separating the content is not possible, it may be useful to introduce a scroll bar into the slide.</li>
 </ul>
 <p>This can be accomplished by including <code>{.scrollable}</code> after the slide title, as shown in the following example.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a><span class="fu">## Avoiding Content Overflow: Introducing a Scroll Bar {.scrollable}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a><span class="fu">## Avoiding Content Overflow: Introducing a Scroll Bar {.scrollable}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If content overflow is a problem throughout the presentation, the scroll bar can be applied to all slides by including <code>scrollable: true</code> under <code>revealjs</code> in the YAML block.</p>
 </section>
 <section id="avoiding-content-overflow-decreasing-the-text-size" class="slide level2 smaller">
@@ -721,7 +880,7 @@
 <li>If separating the content is not possible, it may be useful to decrease the size of the text on the slide.</li>
 </ul>
 <p>This can be accomplished by including <code>{.smaller}</code> after the slide title, as shown in the following example.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a><span class="fu">## Avoiding Content Overflow: Decreasing the Text Size {.smaller}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a><span class="fu">## Avoiding Content Overflow: Decreasing the Text Size {.smaller}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If content overflow is a problem throughout the presentation, the smaller text size can be applied to all slides by including <code>smaller: true</code> under <code>revealjs</code> in the YAML block.</p>
 </section></section>
 <section>
