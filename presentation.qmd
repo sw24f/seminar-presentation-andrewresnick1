@@ -68,17 +68,34 @@ format:
   - Predictive: 
     - Focus is on minimizing bias and estimation variance. May occasionally sacrifice accuracy for empirical precision. 
     - "Wrong" model may predict better than the "correct" one.
-All specifications for a title slide are included in the Quarto document's YAML code.
 
-A simple example:
+# Statistical Modeling Differences
 
-``` yaml
----
-title: "Creating Presentations with Quarto"
-subtitle: "Introduction to Data Science | Fall 2024"
-format: revealjs
----
-```
+## Study Design and Data Collection
+- Explanatory: 
+  - Smaller n, just enough to reduce bias
+  - Increase in number of groups in hierarchial data
+  - Clean, experimental data
+  - Valid, reliable data collection tool, accurately reflecting studied concepts
+  - Factorial designs
+- Prediction:
+  - Larger n
+  - Increase in size of group in hierarchial data
+  - Observational data, avoiding "overly clean"
+  - Measurement quality & meaning to the predicting variable
+  
+## Data Preparation
+
+## Exploratory Data Analysis
+
+## Choice of Variables
+
+## Choice of Methods
+
+## Validation, Evaluation, Selection
+
+## Model Use and Reporting
+
 
 Specifications for *date* and *author* can also be added.
 
