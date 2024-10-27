@@ -83,9 +83,18 @@ format:
   - Increase in size of group in hierarchial data
   - Observational data, avoiding "overly clean"
   - Measurement quality & meaning to the predicting variable
-  
-## Data Preparation
 
+## Data Preparation
+- Explanatory:
+  - Partitioning is less common, i.e. test sets, because of the reduction in statistical power.
+    - When used, can be useful for model validity.
+- Predictive:
+  - Data partitioning has become a standard preprocessing step.
+  - Missing values:
+    - Depends on the relationship between the missingness and dependent variable.
+      - In cases of financial fraud, missingness can be a blessing in disguise.
+    - Estimate multiple reduced models, creating different models for different observations.
+    
 ## Exploratory Data Analysis
 
 ## Choice of Variables
