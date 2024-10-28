@@ -17,7 +17,7 @@ format:
 
 ## Purpose of To Explain or to Predict
 
-- Tackling the distinction between explanatory and predictive modelling in Statistics.
+- Tackling the distinction between explanatory and predictive modeling in Statistics.
 - Lack of this distinction creates multiple problems within different disciplines.
   - Gap between academia and practice
   - Finance, psychology, philosophy
@@ -122,7 +122,7 @@ format:
   - Must include main effects if interaction terms of those effects
 - Predictive:
   - Predictors must be available at time of prediction
-  - Quality of association, data quality, 
+  - Quality of association, data quality, and availability of predictors at the time of prediction. 
 :::
 
 
