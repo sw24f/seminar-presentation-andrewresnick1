@@ -156,6 +156,22 @@ format:
 - Predictive models use flexible, algorithmic models with low interpretability but high predictive accuracy.
 - Cannot provide causal explanations, but shed light on new variables related to price. 
 
+# Implications and Shmueli's Suggestions
+
+## Implications of indiscrimination in research
+- Statistical modeling is used almost exclusively for explanatory modeling, losing the ability to test the relevance of existing theories.
+- Lack of understanding leads to incorrect statistical conclusions.
+- Omission of predictive modeling in theory development leads to irrelevance in the practical context, and creates a barrier to scientific progress.
+
+## Implications of indiscrimination within Statistics
+- Void of predictive methodology has been taken up by ML and data mining, with the primary goals being computationally efficient algorithms and tackling bias-variance tradeoff.
+- Complexity of models are task-dependent, a complex explanatory model might be "simple" in predictive purposes.
+
+## Shmueli's Remarks and Suggestions
+- Become more aware of how statistical models are used outside of statistics and to create or refine methods for purposes outside of statistics.
+- Emphasize the differences between explanatory, predictive, and descriptive modeling as early as possible within statistics and research courses, and advocate for more refined use of the prefix "predict" in statistical modeling.
+
+
 ## Revealjs Options
 
 - `slide-number`: display the slide number on each slide
