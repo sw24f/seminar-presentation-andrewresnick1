@@ -111,8 +111,9 @@ format:
   - Explore a large number of numerical summaries seeking unknown relationships.
   - Reduction in the number of variables reduces sampling variance.
 
-::: {.r-fit-text}
+
 ## Choice of Variables
+::: {.r-fit-text}
 - Explanatory:
   - Goal is to understand causal relationships by using variables represented in the theoretical constructs
   - Variables may be chosen based on the role of the variables based on different fields.
@@ -124,8 +125,9 @@ format:
   - Quality of association, data quality, 
 :::
 
-::: {.r-fit-text}
+
 ## Choice of Methods
+::: {.r-fit-text}
 - Explanatory:
   - Requires interpretable statistical models, f, therefore regression is popular.
   - Not suited for algorithmic models such as KNN or neural networks.
