@@ -28,71 +28,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -480,23 +415,38 @@
 <li>Causation-Association:
 <ul>
 <li>Explanatory: Model f represents an underlying causal function, X is assumed to cause Y.</li>
-<li>Predictive: Model f captures assocation between X and Y. ## Effect - Theory-Data</li>
+<li>Predictive: Model f captures assocation between X and Y.</li>
 </ul></li>
+</ul>
+</section>
+<section id="effect---theory-data" class="slide level2">
+<h2>Effect - Theory-Data</h2>
+<ul>
 <li>Theory-Data:
 <ul>
 <li>Explanatory: Model f is constructed based on F in a way that supports the interpretation of the relationship between X, Y, and testing the causal hypotheses.</li>
-<li>Predictive: Model f is constructed from the data. Interpretability of the relationship between X &amp; Y are not required, sometimes desired for transparency. ## Effect - Retrospective-Prospective:</li>
+<li>Predictive: Model f is constructed from the data. Interpretability of the relationship between X &amp; Y are not required, sometimes desired for transparency.</li>
 </ul></li>
+</ul>
+</section>
+<section id="effect---retrospective-prospective" class="slide level2">
+<h2>Effect - Retrospective-Prospective:</h2>
+<ul>
 <li>Retrospective-Prospective:
 <ul>
 <li>Explanatory: Retrospective, model f is used to test an existing set of hypotheses.</li>
-<li>Predictive: Prospective, model f is constructed for new observations. ## Effect - Bias-Variance:</li>
+<li>Predictive: Prospective, model f is constructed for new observations.</li>
+</ul></li>
+</ul>
+</section>
+<section id="effect---bias-variance" class="slide level2">
+<h2>Effect - Bias-Variance:</h2>
+<ul>
 <li>Explanatory: Focus is on minimizing bias to obtain the most accurate representation of the theory.</li>
 <li>Predictive:
 <ul>
 <li>Focus is on minimizing bias and estimation variance. May occasionally sacrifice accuracy for empirical precision.</li>
 <li>“Wrong” model may predict better than the “correct” one.</li>
-</ul></li>
 </ul></li>
 </ul>
 </section></section>
@@ -561,364 +511,130 @@
 <ul>
 <li>Capturing potentially unknown relationships.</li>
 <li>Explore a large number of numerical summaries seeking unknown relationships.</li>
-<li>Reduction in the number of variables reduces sampling variance. ## Choice of Variables</li>
+<li>Reduction in the number of variables reduces sampling variance.</li>
 </ul></li>
+</ul>
+</section>
+<section id="choice-of-variables" class="slide level2">
+<h2>Choice of Variables</h2>
+<ul>
 <li>Explanatory:
 <ul>
 <li>Goal is to understand causal relationships by using variables represented in the theoretical constructs</li>
 <li>Variables may be chosen based on the role of the variables based on different fields.</li>
 <li>Hard to avoid bias, solutions include 2SLS.</li>
+<li>May only include “control” variables that take place before the causal variable</li>
+<li>Must include main effects if interaction terms of those effects</li>
 </ul></li>
-<li><h2 id="predictive">Predictive:</h2>
-<h2 id="choice-of-methods">Choice of Methods</h2></li>
+<li>Predictive:
+<ul>
+<li>Predictors must be available at time of prediction</li>
+<li>Quality of association, data quality,</li>
+</ul></li>
+</ul>
+</section>
+<section id="choice-of-methods" class="slide level2">
+<h2>Choice of Methods</h2>
+<ul>
+<li>Explanatory:
+<ul>
+<li>Requires interpretable statistical models, f, therefore regression is popular.</li>
+<li>Not suited for algorithmic models such as KNN or neural networks.</li>
+</ul></li>
+<li>Predictive:
+<ul>
+<li>f is often unknown, so can include statistical models and data mining algorithms.</li>
+<li>Algorithmic models are very suitable for predictive and descriptive modeling.</li>
+<li>Shrinkage &amp; Ensemble methods from Bias-Variance.</li>
+</ul></li>
 </ul>
 </section>
 <section id="validation-evaluation-selection" class="slide level2">
 <h2>Validation, Evaluation, Selection</h2>
+<ul>
+<li>Explanatory:
+<ul>
+<li>Model validation &amp; model fit</li>
+<li>Explanatory power, strength of relationship.</li>
+<li>Selected from highest explanatory power.</li>
+</ul></li>
+<li>Predictive:
+<ul>
+<li>Generalization, ability of fitted model to predict new data.</li>
+<li>Predictive power, performance of fitted model on new data.</li>
+<li>Variety of methods for predictive accuracy, AIC, BIC.</li>
+</ul></li>
+</ul>
 </section>
 <section id="model-use-and-reporting" class="slide level2">
 <h2>Model Use and Reporting</h2>
-<p>Specifications for <em>date</em> and <em>author</em> can also be added.</p>
-</section>
-<section id="revealjs-options" class="slide level2">
-<h2>Revealjs Options</h2>
 <ul>
-<li><code>slide-number</code>: display the slide number on each slide</li>
-<li><code>preview-links</code>: open links in an overlay on the slide</li>
-<li><code>theme</code>: configure the presentation theme</li>
-<li><code>incremental</code>: items in lists appear individually</li>
-<li><code>footer</code>: include a footer at the bottom of each slide</li>
-</ul>
-<p>Many other options can be used under <code>revealjs</code> to customize a presentation.</p>
-</section>
-<section id="yaml-example" class="slide level2">
-<h2>YAML Example</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Creating Presentations with Quarto"</span></span>
-<span id="cb1-3"><a href=""></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Introduction to Data Science | Fall 2024"</span></span>
-<span id="cb1-4"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href=""></a><span class="at">    </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb1-6"><a href=""></a><span class="at">        </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-7"><a href=""></a><span class="at">        </span><span class="fu">preview-links</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb1-8"><a href=""></a><span class="at">        </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb1-9"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This is a verbatim copy of the YAML code used in the Quarto file for this presentation!</p>
-</section>
-<section id="subsequent-slides" class="slide level2">
-<h2>Subsequent Slides</h2>
+<li>Explanatory:
 <ul>
-<li>To create a section slide, use a single <code>#</code> followed by the slide’s title.</li>
-<li>To create a regular slide, use a double <code>##</code> followed by the slide’s title. Then, use markdown syntax to add content to the slide after the title line.</li>
+<li>Used to create statistical conclusions, testing causal hypotheses.</li>
+<li>In practical use, dominated by statistical inference.</li>
+</ul></li>
+<li>Predictive:
+<ul>
+<li>Practically used for scientific predictive studies.</li>
+<li>Emphasize data, association, bias-variance, prospects of the study.</li>
+</ul></li>
 </ul>
-<p>The title slide <strong>does not</strong> need to be added in this way; it is created and included automatically based on the information in the YAML code block!</p>
-</section>
-<section id="slides-example" class="slide level2">
-<h2>Slides Example</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href=""></a><span class="co">---</span></span>
-<span id="cb2-2"><a href=""></a><span class="an">title:</span><span class="co"> "Example Presentation"</span></span>
-<span id="cb2-3"><a href=""></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb2-4"><a href=""></a><span class="an">author:</span><span class="co"> "NAME"</span></span>
-<span id="cb2-5"><a href=""></a><span class="an">format:</span><span class="co"> revealjs</span></span>
-<span id="cb2-6"><a href=""></a><span class="co">---</span></span>
-<span id="cb2-7"><a href=""></a></span>
-<span id="cb2-8"><a href=""></a><span class="fu"># Section Title</span></span>
-<span id="cb2-9"><a href=""></a></span>
-<span id="cb2-10"><a href=""></a><span class="fu">## List A</span></span>
-<span id="cb2-11"><a href=""></a></span>
-<span id="cb2-12"><a href=""></a><span class="ss">- </span>Bullet Point 1A</span>
-<span id="cb2-13"><a href=""></a><span class="ss">- </span>Bullet Point 2A</span>
-<span id="cb2-14"><a href=""></a></span>
-<span id="cb2-15"><a href=""></a><span class="fu">## List B</span></span>
-<span id="cb2-16"><a href=""></a></span>
-<span id="cb2-17"><a href=""></a><span class="ss">- </span>Bullet Point 1B</span>
-<span id="cb2-18"><a href=""></a><span class="ss">- </span>Bullet Point 2B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
-<section id="slide-content" class="title-slide slide level1 center">
-<h1>Slide Content</h1>
+<section id="real-examples" class="title-slide slide level1 center">
+<h1>Real Examples</h1>
 
 </section>
-<section id="code-blocks" class="slide level2">
-<h2>Code Blocks</h2>
+<section id="netflix-prize---predictive-approach" class="slide level2">
+<h2>Netflix Prize - Predictive Approach</h2>
 <ul>
-<li>It may be useful to display blocks of code in a slide.</li>
-<li>Open a code block with at least three <code>```</code> followed by the language of the code.</li>
-<li>Close a code block with the same number of <code>```</code> as in the opening.</li>
+<li>Large sample size, ensemble of methods, setting the stage for explanatory research.</li>
+<li>Explanatory context leads to completely different modeling path.</li>
+<li>Winning team combined skills within computer science and statistics.</li>
 </ul>
 </section>
-<section id="code-block-example" class="slide level2">
-<h2>Code Block Example</h2>
-<p>For example, the following code <em>in the Quarto document</em></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a><span class="in">``` python</span></span>
-<span id="cb3-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-3"><a href=""></a>np.arange(<span class="dv">10</span>)</span>
-<span id="cb3-4"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>will yield the following output <em>in the rendered slide</em>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href=""></a>np.arange(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Notice that this does not run the Python code; it simply displays the block of code in the slide.</p>
-</section>
-<section id="executable-code" class="slide level2">
-<h2>Executable Code</h2>
-<p>To display the output of a code block in a slide, enclose the programming language inside <code>{}</code>. For example, the following code <em>in the Quarto document</em></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>```{python}</span>
-<span id="cb5-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-3"><a href=""></a>np.arange(<span class="dv">10</span>)</span>
-<span id="cb5-4"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>will yield the following output <em>in the rendered slide</em>.</p>
-<div id="b9a79320" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</code></pre>
-</div>
-</div>
-<p>Including a period inside <code>{}</code> before the programming language will display the code block instead of running it.</p>
-</section>
-<section id="images-from-code-output" class="slide level2">
-<h2>Images from Code Output</h2>
-<p>Executable code blocks can be used to display images in slides. Consider the following code example.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>```{python}</span>
-<span id="cb7-2"><a href=""></a><span class="co">#| fig-align: center</span></span>
-<span id="cb7-3"><a href=""></a><span class="co">#| fig-cap: "A line plot on a polar axis"</span></span>
-<span id="cb7-4"><a href=""></a></span>
-<span id="cb7-5"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-6"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-7"><a href=""></a></span>
-<span id="cb7-8"><a href=""></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb7-9"><a href=""></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb7-10"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(</span>
-<span id="cb7-11"><a href=""></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
-<span id="cb7-12"><a href=""></a>)</span>
-<span id="cb7-13"><a href=""></a>ax.plot(theta, r)</span>
-<span id="cb7-14"><a href=""></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb7-15"><a href=""></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb7-16"><a href=""></a>plt.show()</span>
-<span id="cb7-17"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="images-from-code-output-example" class="slide level2">
-<h2>Images from Code Output – Example</h2>
-<p>The preceding code example will create the following image.</p>
-<div id="ac0ac237" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="presentation_files/figure-revealjs/cell-3-output-1.png" width="450" height="439"></p>
-<figcaption>A line plot on a polar axis</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="images-from-files" class="slide level2">
-<h2>Images from Files</h2>
-<p>It is also possible to insert an image from a saved file.</p>
-<div id="9fd93c2c" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="presentation_files/figure-revealjs/cell-4-output-1.png" width="450" height="439"></p>
-<figcaption>A line plot on a polar axis</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="images-from-files-markdown-syntax" class="slide level2">
-<h2>Images from Files – Markdown Syntax</h2>
-<p>To import a saved image for display in a slide, use the following markdown syntax as an example. This line of code may be used to display the image on the previous slide.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href=""></a><span class="al">![A line plot on a polar axis](polar_axis.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ebay-auction-research---explanatory-approach" class="slide level2">
+<h2>eBay Auction Research - Explanatory Approach</h2>
 <ul>
-<li>The caption for the figure is enclosed inside <code>[]</code>.</li>
-<li>The file path for the saved image file is enclosed inside <code>()</code>.</li>
+<li>Previous explanatory research based in game theory, used to test robustness of hypothesized effects across different variables.</li>
+<li>Omit number of bidders due to endogeneity, adding bias to the model.</li>
+<li>Predictive models use flexible, algorithmic models with low interpretability but high predictive accuracy.</li>
+<li>Cannot provide causal explanations, but shed light on new variables related to price.</li>
 </ul>
-<p>Remember to use relative references, as opposed to absolute references, when specifying the file path!</p>
-</section>
-<section id="markdown-syntax-for-links" class="slide level2">
-<h2>Markdown Syntax for Links</h2>
-<p>To create a link, use the same markdown syntax as before, but omit the initial <code>!</code>.</p>
-<ul>
-<li>The text of the link is enclosed inside <code>[]</code>.</li>
-<li>The URL is enclosed inside <code>()</code>.</li>
-</ul>
-<p>For example, use the following markdown syntax to obtain a link to the Quarto website.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href=""></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="https://quarto.org">Quarto</a></p>
-</section>
-<section id="tables-markdown-syntax" class="slide level2">
-<h2>Tables – Markdown Syntax</h2>
-<p>Refer to the <a href="https://quarto.org/docs/authoring/tables.html">Quarto documentation</a> for a comprehensive explanation on the details of creating tables in markdown.</p>
-<p>The basic syntax for a simple table is illustrated by the following example.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href=""></a>| Left | Center | Right |</span>
-<span id="cb10-2"><a href=""></a>|:-----|:------:|------:|</span>
-<span id="cb10-3"><a href=""></a>| ABC  | ABC    | ABC   |</span>
-<span id="cb10-4"><a href=""></a>| ABCD | ABCD   | ABCD  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Left</th>
-<th style="text-align: center;">Center</th>
-<th style="text-align: right;">Right</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">ABC</td>
-<td style="text-align: center;">ABC</td>
-<td style="text-align: right;">ABC</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ABCD</td>
-<td style="text-align: center;">ABCD</td>
-<td style="text-align: right;">ABCD</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="mathematical-notation" class="slide level2">
-<h2>Mathematical Notation</h2>
-<ul>
-<li>Use LaTeX to typeset mathematical notation.</li>
-<li>In-text math is enclosed with a single <code>$</code> on each side.</li>
-<li>Display math is enclosed with a double <code>$$</code> on each side.</li>
-</ul>
-</section>
-<section id="latex-example" class="slide level2">
-<h2>LaTeX Example</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href=""></a>$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</span>
-<span id="cb11-2"><a href=""></a>The quadratic formula is given by the above equation.</span>
-<span id="cb11-3"><a href=""></a>This is used to find the solutions to the equation $ax^2 + bx + c = 0$.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><span class="math display">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span> The quadratic formula is given by the above equation. This is used to find the solutions to the equation <span class="math inline">\(ax^2 + bx + c = 0\)</span>.</p>
 </section></section>
 <section>
-<section id="slide-customization" class="title-slide slide level1 center">
-<h1>Slide Customization</h1>
+<section id="implications-and-shmuelis-suggestions" class="title-slide slide level1 center">
+<h1>Implications and Shmueli’s Suggestions</h1>
 
 </section>
-<section id="incremental-lists" class="slide level2">
-<h2>Incremental Lists</h2>
-<div>
+<section id="implications-of-indiscrimination-in-research" class="slide level2">
+<h2>Implications of indiscrimination in research</h2>
 <ul>
-<li class="fragment">This slide contains an incremental list.</li>
-<li class="fragment">Lists on specific slides can be configured to display incrementally.</li>
-<li class="fragment">Alternatively, lists can display incrementally by default for the entire presentation.</li>
-<li class="fragment">Additionally, incremental displays can be disabled on specific slides, when lists display incrementally by default.</li>
+<li>Statistical modeling is used almost exclusively for explanatory modeling, losing the ability to test the relevance of existing theories.</li>
+<li>Lack of understanding leads to incorrect statistical conclusions.</li>
+<li>Omission of predictive modeling in theory development leads to irrelevance in the practical context, and creates a barrier to scientific progress.</li>
 </ul>
-</div>
 </section>
-<section id="incremental-lists-entire-presentation" class="slide level2">
-<h2>Incremental Lists – Entire Presentation</h2>
-<p>By including the following under the <code>revealjs</code> options in the YAML block, bulleted and numbered lists will display incrementally by default.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb12-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Presentation Title"</span></span>
-<span id="cb12-3"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb12-4"><a href=""></a><span class="at">    </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb12-5"><a href=""></a><span class="at">        </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb12-6"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="incremental-lists-specific-slides" class="slide level2">
-<h2>Incremental Lists – Specific Slides</h2>
-<p>By enclosing a list’s code in a div, the display of the list can go against the default setting.</p>
-<p>To make a list incremental:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href=""></a>::: {.incremental}</span>
-<span id="cb13-2"><a href=""></a><span class="ss">- </span>Item 1</span>
-<span id="cb13-3"><a href=""></a><span class="ss">- </span>Item 2</span>
-<span id="cb13-4"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To make a list non-incremental:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a>::: {.nonincremental}</span>
-<span id="cb14-2"><a href=""></a><span class="ss">- </span>Item 1</span>
-<span id="cb14-3"><a href=""></a><span class="ss">- </span>Item 2</span>
-<span id="cb14-4"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="div-containers" class="slide level2">
-<h2>Div Containers</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="implications-of-indiscrimination-within-statistics" class="slide level2">
+<h2>Implications of indiscrimination within Statistics</h2>
 <ul>
-<li>The previous slide demonstrated how div containers may be used to override default settings.</li>
-<li>The next slide will demonstrate how they may be used to display content in multiple columns, as in the current slide.</li>
+<li>Void of predictive methodology has been taken up by ML and data mining, with the primary goals being computationally efficient algorithms and tackling bias-variance tradeoff.</li>
+<li>Complexity of models are task-dependent, a complex explanatory model might be “simple” in predictive purposes.</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li>Divs are useful for adding various attributes to specific pieces of code.</li>
-<li>Furthermore, divs may be nested within each other.</li>
-<li>For more information on the syntax and application of div containers, refer to the <a href="https://quarto.org/docs/authoring/markdown-basics.html#sec-divs-and-spans">Quarto documentation</a>.</li>
-</ul>
-</div></div>
 </section>
-<section id="multiple-columns" class="slide level2">
-<h2>Multiple Columns</h2>
-<p>This framework, which makes use of nested divs, enables the display of multiple columns in a slide.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a>:::: {.columns}</span>
-<span id="cb15-2"><a href=""></a></span>
-<span id="cb15-3"><a href=""></a>::: {.column width="50%"}</span>
-<span id="cb15-4"><a href=""></a>Left Column</span>
-<span id="cb15-5"><a href=""></a>:::</span>
-<span id="cb15-6"><a href=""></a></span>
-<span id="cb15-7"><a href=""></a>::: {.column width="50%"}</span>
-<span id="cb15-8"><a href=""></a>Right Column</span>
-<span id="cb15-9"><a href=""></a>:::</span>
-<span id="cb15-10"><a href=""></a></span>
-<span id="cb15-11"><a href=""></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="avoiding-content-overflow-introducing-a-scroll-bar" class="slide level2 scrollable">
-<h2>Avoiding Content Overflow: Introducing a Scroll Bar</h2>
+<section id="shmuelis-remarks-and-suggestions" class="slide level2">
+<h2>Shmueli’s Remarks and Suggestions</h2>
 <ul>
-<li>Be mindful of the amount of content on each slide.</li>
-<li>Render the presentation frequently to see if content overflow is present on any slides.</li>
-<li>If a slide overflows with content, consider separating it into more than one slide.</li>
-<li>If separating the content is not possible, it may be useful to introduce a scroll bar into the slide.</li>
+<li>Become more aware of how statistical models are used outside of statistics and to create or refine methods for purposes outside of statistics.</li>
+<li>Emphasize the differences between explanatory, predictive, and descriptive modeling as early as possible within statistics and research courses, and advocate for more refined use of the prefix “predict” in statistical modeling.</li>
 </ul>
-<p>This can be accomplished by including <code>{.scrollable}</code> after the slide title, as shown in the following example.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a><span class="fu">## Avoiding Content Overflow: Introducing a Scroll Bar {.scrollable}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If content overflow is a problem throughout the presentation, the scroll bar can be applied to all slides by including <code>scrollable: true</code> under <code>revealjs</code> in the YAML block.</p>
-</section>
-<section id="avoiding-content-overflow-decreasing-the-text-size" class="slide level2 smaller">
-<h2>Avoiding Content Overflow: Decreasing the Text Size</h2>
-<ul>
-<li>Be mindful of the amount of content on each slide.</li>
-<li>Render the presentation frequently to see if content overflow is present on any slides.</li>
-<li>If a slide overflows with content, consider separating it into more than one slide.</li>
-<li>If separating the content is not possible, it may be useful to decrease the size of the text on the slide.</li>
-</ul>
-<p>This can be accomplished by including <code>{.smaller}</code> after the slide title, as shown in the following example.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a><span class="fu">## Avoiding Content Overflow: Decreasing the Text Size {.smaller}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If content overflow is a problem throughout the presentation, the smaller text size can be applied to all slides by including <code>smaller: true</code> under <code>revealjs</code> in the YAML block.</p>
-</section></section>
-<section>
-<section id="conclusion" class="title-slide slide level1 center">
-<h1>Conclusion</h1>
-
-</section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
-<p>This presentation has covered:</p>
-<ul>
-<li>Creating slides in a Revealjs presentation</li>
-<li>Adding various content to slides</li>
-<li>Basic ways to customize slides</li>
-</ul>
-<p>It would be impossible to describe all the capabilities of Revealjs in one presentation. This presentation is meant to provide an introduction to the broad functionality of Revealjs.</p>
-</section>
-<section id="further-reading" class="slide level2">
-<h2>Further Reading</h2>
-<p>For more information about creating Revealjs presentations:</p>
-<ul>
-<li><a href="https://quarto.org/docs/presentations/">Presentations – Quarto</a></li>
-<li><a href="https://quarto.org/docs/presentations/revealjs/">Revealjs – Quarto</a></li>
-<li><a href="https://quarto.org/docs/presentations/revealjs/presenting.html">Presenting Slides – Quarto</a></li>
-</ul>
-<p>For a useful guide on fundamental markdown syntax:</p>
-<ul>
-<li><a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown Basics – Quarto</a></li>
-</ul>
-</section></section>
-<section id="thank-you" class="title-slide slide level1 center">
-<h1>THANK YOU!!!</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

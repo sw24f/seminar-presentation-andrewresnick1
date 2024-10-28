@@ -5,7 +5,6 @@ format:
     revealjs:
         slide-number: true
         preview-links: true
-        smaller: true
         theme: default
 ---
 # Introduction
@@ -56,14 +55,17 @@ format:
 - Causation-Association:
   - Explanatory: Model f represents an underlying causal function, X is assumed to cause Y.
   - Predictive: Model f captures assocation between X and Y.
+
 ## Effect - Theory-Data
 - Theory-Data:
   - Explanatory: Model f is constructed based on F in a way that supports the interpretation of the relationship between X, Y, and testing the causal hypotheses.
   - Predictive: Model f is constructed from the data. Interpretability of the relationship between X & Y are not required, sometimes desired for transparency.
+
 ## Effect - Retrospective-Prospective:
 - Retrospective-Prospective:
   - Explanatory: Retrospective, model f is used to test an existing set of hypotheses.
   - Predictive: Prospective, model f is constructed for new observations.
+
 ## Effect - Bias-Variance:
   - Explanatory: Focus is on minimizing bias to obtain the most accurate representation of the theory.
   - Predictive: 
@@ -73,6 +75,7 @@ format:
 # Statistical Modeling Differences
 
 ## Study Design and Data Collection
+::: {.r-fit-text}
 - Explanatory: 
   - Smaller n, just enough to reduce bias
   - Increase in number of groups in hierarchial data
@@ -84,8 +87,10 @@ format:
   - Increase in size of group in hierarchial data
   - Observational data, avoiding "overly clean"
   - Measurement quality & meaning to the predicting variable
+:::
 
 ## Data Preparation
+::: {.r-fit-text}
 - Explanatory:
   - Partitioning is less common, i.e. test sets, because of the reduction in statistical power.
     - When used, can be useful for model validity.
@@ -95,7 +100,8 @@ format:
     - Depends on the relationship between the missingness and dependent variable.
       - In cases of financial fraud, missingness can be a blessing in disguise.
     - Estimate multiple reduced models, creating different models for different observations.
-    
+:::
+
 ## Exploratory Data Analysis
 - Explanatory:
   - EDA is geared toward specified causal relationships.
@@ -105,6 +111,7 @@ format:
   - Explore a large number of numerical summaries seeking unknown relationships.
   - Reduction in the number of variables reduces sampling variance.
 
+::: {.r-fit-text}
 ## Choice of Variables
 - Explanatory:
   - Goal is to understand causal relationships by using variables represented in the theoretical constructs
@@ -115,7 +122,9 @@ format:
 - Predictive:
   - Predictors must be available at time of prediction
   - Quality of association, data quality, 
+:::
 
+::: {.r-fit-text}
 ## Choice of Methods
 - Explanatory:
   - Requires interpretable statistical models, f, therefore regression is popular.
@@ -124,6 +133,7 @@ format:
   - f is often unknown, so can include statistical models and data mining algorithms. 
   - Algorithmic models are very suitable for predictive and descriptive modeling.
   - Shrinkage & Ensemble methods from Bias-Variance.
+:::
 
 ## Validation, Evaluation, Selection
 - Explanatory:
@@ -166,7 +176,7 @@ format:
 ## Implications of indiscrimination within Statistics
 - Void of predictive methodology has been taken up by ML and data mining, with the primary goals being computationally efficient algorithms and tackling bias-variance tradeoff.
 - Complexity of models are task-dependent, a complex explanatory model might be "simple" in predictive purposes.
-qua
+
 ## Shmueli's Remarks and Suggestions
 - Become more aware of how statistical models are used outside of statistics and to create or refine methods for purposes outside of statistics.
 - Emphasize the differences between explanatory, predictive, and descriptive modeling as early as possible within statistics and research courses, and advocate for more refined use of the prefix "predict" in statistical modeling.
