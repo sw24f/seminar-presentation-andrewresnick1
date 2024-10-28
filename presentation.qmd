@@ -135,6 +135,12 @@ format:
   - Predictive power, performance of fitted model on new data.
   - Variety of methods for predictive accuracy, AIC, BIC
 ## Model Use and Reporting
+- Explanatory:
+  - Used to create statistical conclusions, testing causal hypotheses.
+  - In practical use, dominated by statistical inference.
+- Predictive:
+  - Practically used for scientific predictive studies.
+  - Emphasize data, association, bias-variance, prospects of the study.
 
 
 Specifications for *date* and *author* can also be added.
