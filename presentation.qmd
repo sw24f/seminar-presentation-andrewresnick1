@@ -129,11 +129,12 @@ format:
 - Explanatory:
   - Model validation & model fit
   - Explanatory power, strength of relationship.
-  - Selected from highest explanatory power
+  - Selected from highest explanatory power.
 - Predictive:
   - Generalization, ability of fitted model to predict new data.
   - Predictive power, performance of fitted model on new data.
-  - Variety of methods for predictive accuracy, AIC, BIC
+  - Variety of methods for predictive accuracy, AIC, BIC.
+
 ## Model Use and Reporting
 - Explanatory:
   - Used to create statistical conclusions, testing causal hypotheses.
@@ -142,8 +143,18 @@ format:
   - Practically used for scientific predictive studies.
   - Emphasize data, association, bias-variance, prospects of the study.
 
+# Real Examples
 
-Specifications for *date* and *author* can also be added.
+## Netflix Prize - Predictive Approach
+- Large sample size, ensemble of methods, setting the stage for explanatory research.
+- Explanatory context leads to completely different modeling path.
+- Winning team combined skills within computer science and statistics.
+
+## eBay Auction Research - Explanatory Approach
+- Previous explanatory research based in game theory, used to test robustness of hypothesized effects across different variables.
+- Omit number of bidders due to endogeneity, adding bias to the model.
+- Predictive models use flexible, algorithmic models with low interpretability but high predictive accuracy.
+- Cannot provide causal explanations, but shed light on new variables related to price. 
 
 ## Revealjs Options
 
